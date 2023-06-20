@@ -26,12 +26,12 @@ public class ArticleFutureRepository {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(1000);
-                return articleEntities.stream()
-                        .filter(articleEntity -> articleEntity.getUserId().equals(userId))
-                        .collect(Collectors.toList());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            return articleEntities.stream()
+                    .filter(articleEntity -> articleEntity.getUserId().equals(userId))
+                    .collect(Collectors.toList());
         });
     }
 }

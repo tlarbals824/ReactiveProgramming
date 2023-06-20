@@ -21,10 +21,10 @@ public class FollowFutureRepository {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(1000);
-                return userFollowCountMap.getOrDefault(userId, 0L);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            return userFollowCountMap.getOrDefault(userId, 0L);
         });
     }
 }

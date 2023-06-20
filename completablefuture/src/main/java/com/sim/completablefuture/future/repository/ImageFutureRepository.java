@@ -25,11 +25,11 @@ public class ImageFutureRepository {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(1000);
-                var image = imageMap.get(id);
-                return Optional.ofNullable(image);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            var image = imageMap.get(id);
+            return Optional.ofNullable(image);
         });
     }
 }
