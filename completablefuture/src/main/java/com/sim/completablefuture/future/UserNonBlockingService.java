@@ -43,22 +43,22 @@ public class UserNonBlockingService {
         var userEntity = userEntityOptional.get();
 
         var imageFuture = imageFutureRepository.findById(userEntity.getProfileImageId())
-                .thenApplyAsync(imageEntityOptional -> imageEntityOptional
-                        .map(imageEntity ->
+                .thenApplyAsync(imageEntityOptional ->
+                        imageEntityOptional.map(imageEntity ->
                                 new Image(imageEntity.getId(), imageEntity.getName(), imageEntity.getUrl()))
                 );
 
         var articleFuture = articleFutureRepository.findAllByUserId(userEntity.getId())
-                .thenApplyAsync(articleEntities -> articleEntities.stream()
-                        .map(articleEntity -> new Article(articleEntity.getId(), articleEntity.getTitle(), articleEntity.getContent()))
-                        .collect(Collectors.toList())
+                .thenApplyAsync(articleEntities ->
+                        articleEntities.stream()
+                                .map(articleEntity -> new Article(articleEntity.getId(), articleEntity.getTitle(), articleEntity.getContent()))
+                                .collect(Collectors.toList())
                 );
 
-        var followFuture = followFutureRepository.countByUserId(userEntity.getId())
-                .thenApplyAsync(count -> count);
+        var followFuture = followFutureRepository.countByUserId(userEntity.getId());
 
         return CompletableFuture.allOf(imageFuture, articleFuture, followFuture)
-                .thenApplyAsync(v->{
+                .thenApplyAsync(v -> {
                     try {
                         var image = imageFuture.get();
                         var articles = articleFuture.get();
@@ -72,7 +72,6 @@ public class UserNonBlockingService {
                                 followCount
                         ));
                     } catch (InterruptedException | ExecutionException e) {
-                        e.printStackTrace();
                         return Optional.empty();
                     }
                 });
