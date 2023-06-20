@@ -21,8 +21,8 @@ public class ImageFutureRepository {
 
     @SneakyThrows
     public CompletableFuture<Optional<ImageEntity>> findById(String id) {
-        log.info("ImageRepository.findById: {}", id);
         return CompletableFuture.supplyAsync(() -> {
+            log.info("ImageRepository.findById: {}", id);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

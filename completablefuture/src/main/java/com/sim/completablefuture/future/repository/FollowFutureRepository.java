@@ -17,8 +17,8 @@ public class FollowFutureRepository {
 
     @SneakyThrows
     public CompletableFuture<Long> countByUserId(String userId) {
-        log.info("FollowRepository.countByUserId: {}", userId);
         return CompletableFuture.supplyAsync(() -> {
+            log.info("FollowRepository.countByUserId: {}", userId);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

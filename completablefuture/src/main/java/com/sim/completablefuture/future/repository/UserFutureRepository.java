@@ -20,8 +20,8 @@ public class UserFutureRepository {
 
     @SneakyThrows
     public CompletableFuture<Optional<UserEntity>> findById(String userId) {
-        log.info("UserRepository.findById: {}", userId);
         return CompletableFuture.supplyAsync(()->{
+            log.info("UserRepository.findById: {}", userId);
             try{
                 Thread.sleep(1000);
             } catch (InterruptedException e){

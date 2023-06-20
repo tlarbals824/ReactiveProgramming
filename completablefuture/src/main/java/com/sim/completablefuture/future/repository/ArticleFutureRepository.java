@@ -22,8 +22,8 @@ public class ArticleFutureRepository {
 
     @SneakyThrows
     public CompletableFuture<List<ArticleEntity>> findAllByUserId(String userId) {
-        log.info("ArticleRepository.findAllByUserId: {}", userId);
         return CompletableFuture.supplyAsync(() -> {
+            log.info("ArticleRepository.findAllByUserId: {}", userId);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
