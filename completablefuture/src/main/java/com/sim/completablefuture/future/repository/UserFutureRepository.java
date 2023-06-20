@@ -24,11 +24,11 @@ public class UserFutureRepository {
         return CompletableFuture.supplyAsync(()->{
             try{
                 Thread.sleep(1000);
-                var user = userMap.get(userId);
-                return Optional.ofNullable(user);
             } catch (InterruptedException e){
                 throw new RuntimeException(e);
             }
+            var user = userMap.get(userId);
+            return Optional.ofNullable(user);
         });
     }
 }
