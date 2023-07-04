@@ -1,4 +1,4 @@
-package com.sim.reactor.common.repository;
+package com.sim.webfluximage.entity.common.repository;
 
 import lombok.Data;
 

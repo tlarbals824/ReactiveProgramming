@@ -1,11 +1,10 @@
-package com.sim.reactor.common.repository;
+package com.sim.webfluximage.entity.common;
 
 import lombok.Data;
 
 @Data
-public class ArticleEntity {
+public class Article {
     private final String id;
     private final String title;
     private final String content;
-    private final String userId;
 }

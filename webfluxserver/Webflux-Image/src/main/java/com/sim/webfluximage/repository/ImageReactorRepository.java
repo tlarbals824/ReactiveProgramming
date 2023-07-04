@@ -1,14 +1,13 @@
-package com.sim.reactor.reactor.repository;
+package com.sim.webfluximage.repository;
 
-import com.sim.reactor.common.repository.ImageEntity;
-import com.sim.reactor.common.repository.UserEntity;
+import com.sim.webfluximage.entity.common.repository.ImageEntity;
+import com.sim.webfluximage.entity.common.repository.UserEntity;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 public class ImageReactorRepository {
@@ -17,7 +16,8 @@ public class ImageReactorRepository {
 
     public ImageReactorRepository() {
         imageMap = Map.of(
-                "image#1000", new ImageEntity("image#1000", "profileImage", "https://dailyone.com/images/1000")
+                "1", new ImageEntity("1", "profileImage", "https://dailyone.com/images/1"),
+                "2", new ImageEntity("2", "peter's image", "https://dailyone.com/images/2")
         );
     }
 

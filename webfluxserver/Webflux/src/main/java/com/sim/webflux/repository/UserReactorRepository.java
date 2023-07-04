@@ -1,13 +1,11 @@
-package com.sim.reactor.reactor.repository;
+package com.sim.webflux.repository;
 
-import com.sim.reactor.common.repository.UserEntity;
+import com.sim.webflux.common.repository.UserEntity;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 public class UserReactorRepository {
@@ -15,7 +13,8 @@ public class UserReactorRepository {
     private final Map<String, UserEntity> userMap;
 
     public UserReactorRepository() {
-        var user = new UserEntity("1234", "taewoo", 32, "image#1000");
+        var user = new UserEntity(
+                "1234", "taewoo", 32, "1", "1q2w3e4r!");
 
         userMap = Map.of("1234", user);
     }
