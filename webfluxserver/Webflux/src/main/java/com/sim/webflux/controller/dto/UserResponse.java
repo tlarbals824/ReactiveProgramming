@@ -10,5 +10,5 @@ public class UserResponse {
     private final String name;
     private final int age;
     private final Long followCount;
-//    private final Optional<ProfileImageResponse> image;
+    private final Optional<ProfileImageResponse> image;
 }
