@@ -1,0 +1,3 @@
+rootProject.name = 'webfluxserver'
+include 'Webflux'
+include 'Webflux-Image'
