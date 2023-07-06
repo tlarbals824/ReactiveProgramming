@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sim.completablefuture.blocking.UserBlockingServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-07-06T06:49:48" hostname="simgyumin-ui-MacBookPro.local" time="5.048">
+  <properties/>
+  <testcase name="testGetUser()" classname="com.sim.completablefuture.blocking.UserBlockingServiceTest" time="4.039"/>
+  <testcase name="getUserEmptyIfInvalidUserIdIsGiven()" classname="com.sim.completablefuture.blocking.UserBlockingServiceTest" time="1.008"/>
+  <system-out><![CDATA[2023-07-06T15:49:48.829+09:00  INFO 25342 --- [    Test worker] c.s.c.b.repository.UserRepository        : UserRepository.findById: 1234
+2023-07-06T15:49:49.836+09:00  INFO 25342 --- [    Test worker] c.s.c.b.repository.ImageRepository       : ImageRepository.findById: image#1000
+2023-07-06T15:49:50.842+09:00  INFO 25342 --- [    Test worker] c.s.c.b.repository.ArticleRepository     : ArticleRepository.findAllByUserId: 1234
+2023-07-06T15:49:51.851+09:00  INFO 25342 --- [    Test worker] c.s.c.b.repository.FollowRepository      : FollowRepository.countByUserId: 1234
+2023-07-06T15:49:52.857+09:00  INFO 25342 --- [    Test worker] c.s.c.blocking.UserBlockingService       : blocking time : 4028
+2023-07-06T15:49:52.867+09:00  INFO 25342 --- [    Test worker] c.s.c.b.repository.UserRepository        : UserRepository.findById: invalid_user_id
+2023-07-06T15:49:53.873+09:00  INFO 25342 --- [    Test worker] c.s.c.blocking.UserBlockingService       : blocking time : 1005
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
