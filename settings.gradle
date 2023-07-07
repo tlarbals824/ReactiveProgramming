@@ -11,4 +11,5 @@ include 'sse'
 include 'Webflux'
 include 'Webflux-Image'
 include 'websocket'
+include 'r2dbc'
 
