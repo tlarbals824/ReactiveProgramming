@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Data
 public class UserEntity {
     @Id
-    private final String id;
+    private final Long id;
     private final String name;
     private final Integer age;
     private final String profileImageId;
@@ -27,7 +27,7 @@ public class UserEntity {
     private LocalDateTime updatedAt;
 
     @PersistenceCreator
-    public UserEntity(String id, String name, Integer age, String profileImageId, String password) {
+    public UserEntity(Long id, String name, Integer age, String profileImageId, String password) {
         this.id = id;
         this.name = name;
         this.age = age;

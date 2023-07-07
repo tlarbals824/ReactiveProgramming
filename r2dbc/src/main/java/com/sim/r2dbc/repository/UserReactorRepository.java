@@ -10,17 +10,17 @@ import java.util.Map;
 @Slf4j
 public class UserReactorRepository {
 
-    private final Map<String, UserEntity> userMap;
+    private final Map<Long, UserEntity> userMap;
 
     public UserReactorRepository() {
         var user = new UserEntity(
-                "1234", "taewoo", 32, "1", "1q2w3e4r!");
+                1L, "sim", 24, "1", "1q2w3e4r!");
 
-        userMap = Map.of("1234", user);
+        userMap = Map.of(1L, user);
     }
 
     @SneakyThrows
-    public Mono<UserEntity> findById(String userId) {
+    public Mono<UserEntity> findById(Long userId) {
         return Mono.create(sink -> {
             log.info("UserRepository.findById: {}", userId);
             try {
