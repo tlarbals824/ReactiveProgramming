@@ -7,10 +7,11 @@ repositories {
     mavenCentral()
 }
 
-bootJar.enabled = false;
-
 
 subprojects {
+    bootJar.enabled = false
+    jar.enabled = true
+
     apply plugin: 'java'
     apply plugin: 'java-library'
     apply plugin: 'org.springframework.boot'

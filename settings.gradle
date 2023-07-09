@@ -12,4 +12,6 @@ include 'Webflux'
 include 'Webflux-Image'
 include 'websocket'
 include 'r2dbc'
+include 'redis-image'
+include 'redis-notification'
 
